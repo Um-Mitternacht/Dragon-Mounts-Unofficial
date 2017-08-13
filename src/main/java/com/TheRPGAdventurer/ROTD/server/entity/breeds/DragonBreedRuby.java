@@ -9,12 +9,12 @@ public class DragonBreedRuby extends DragonBreed {
     DragonBreedRuby() {
         super("ruby", 0x960b0f);
 
-        addImmunity(DamageSource.inFire);
-        addImmunity(DamageSource.onFire);
-        addImmunity(DamageSource.magic);
-        addImmunity(DamageSource.hotFloor);
-        addImmunity(DamageSource.lightningBolt);
-        addImmunity(DamageSource.wither);
+        addImmunity(DamageSource.IN_FIRE);
+        addImmunity(DamageSource.ON_FIRE);
+        addImmunity(DamageSource.MAGIC);
+        addImmunity(DamageSource.HOT_FLOOR);
+        addImmunity(DamageSource.LIGHTNING_BOLT);
+        addImmunity(DamageSource.WITHER);
 
     }
 

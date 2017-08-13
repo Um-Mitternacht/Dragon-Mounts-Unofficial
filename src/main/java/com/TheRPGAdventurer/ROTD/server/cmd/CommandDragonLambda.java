@@ -40,7 +40,7 @@ public class CommandDragonLambda extends CommandBaseDragon {
     }
 
     @Override
-    public String getCommandUsage(ICommandSender sender) {
+    public String getUsage(ICommandSender sender) {
         return "";
     }
 

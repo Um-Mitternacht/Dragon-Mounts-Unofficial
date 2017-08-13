@@ -9,18 +9,19 @@
  */
 package com.TheRPGAdventurer.ROTD.server.entity.helper;
 
-import static com.TheRPGAdventurer.ROTD.server.entity.helper.EnumDragonLifeStage.*;
+import static com.TheRPGAdventurer.ROTD.server.entity.helper.EnumDragonLifeStage.ADULT;
+import static com.TheRPGAdventurer.ROTD.server.entity.helper.EnumDragonLifeStage.EGG;
+import static com.TheRPGAdventurer.ROTD.server.entity.helper.EnumDragonLifeStage.HATCHLING;
+import static com.TheRPGAdventurer.ROTD.server.entity.helper.EnumDragonLifeStage.JUVENILE;
 import static net.minecraft.entity.SharedMonsterAttributes.ATTACK_DAMAGE;
 import static net.minecraft.entity.SharedMonsterAttributes.MAX_HEALTH;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.TheRPGAdventurer.ROTD.client.init.ModItems;
-import com.TheRPGAdventurer.ROTD.server.block.BlockDragonBreedEgg;
+import com.TheRPGAdventurer.ROTD.client.blocks.BlockDragonBreedEgg;
+import com.TheRPGAdventurer.ROTD.client.init.ModBlocks;
 import com.TheRPGAdventurer.ROTD.server.entity.EntityTameableDragon;
-import com.TheRPGAdventurer.ROTD.server.entity.breeds.DragonBreedEnd;
-import com.TheRPGAdventurer.ROTD.server.entity.breeds.EnumDragonBreed;
 import com.TheRPGAdventurer.ROTD.server.util.ClientServerSynchronisedTickCount;
 
 import net.minecraft.block.Block;
@@ -29,7 +30,6 @@ import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -93,7 +93,7 @@ public class DragonLifeStageHelper extends DragonHelper {
      * Generates some egg shell particles and a breaking sound.
      */
     public void playEggCrackEffect() {
-        dragon.worldObj.playEvent(2001, dragon.getPosition(),
+        dragon.world.playEvent(2001, dragon.getPosition(),
                 Block.getIdFromBlock(BlockDragonBreedEgg.DRAGON_BREED_EGG));
     }
     
@@ -287,7 +287,7 @@ public class DragonLifeStageHelper extends DragonHelper {
         double ox = (rand.nextDouble() - 0.3) * 2;
         double oy = (rand.nextDouble() - 0.3) * 2;
         double oz = (rand.nextDouble() - 0.3) * 2;
-        dragon.worldObj.spawnParticle(this.getEggParticle(), px, py, pz, ox, oy, oz); 
+        dragon.world.spawnParticle(this.getEggParticle(), px, py, pz, ox, oy, oz); 
         
     }
     

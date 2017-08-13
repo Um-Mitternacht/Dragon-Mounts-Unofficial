@@ -42,16 +42,8 @@ public class ClientProxy extends CommonProxy {
         super.onPreInit(event);
         
         // register dragon entity renderer
-        RenderingRegistry.registerEntityRenderingHandler(
-                EntityTameableDragon.class, DragonRenderer::new);
-        
-        // register item renderer for dragon egg block variants
-        ResourceLocation eggModelItemLoc = new ResourceLocation(RealmOfTheDragons.MODID, "dragon_egg");
-        Item itemBlockDragonEgg = Item.REGISTRY.getObject(eggModelItemLoc);
-        EnumDragonBreed.META_MAPPING.forEach((breed, meta) -> {
-            ModelResourceLocation eggModelLoc = new ModelResourceLocation(RealmOfTheDragons.MODID + ":dragon_egg", "breed=" + breed.getName());
-            ModelLoader.setCustomModelResourceLocation(itemBlockDragonEgg, meta, eggModelLoc);
-        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityTameableDragon.class, DragonRenderer::new);
+      
     }
 
     @Override
@@ -67,13 +59,4 @@ public class ClientProxy extends CommonProxy {
             MinecraftForge.EVENT_BUS.register(new GuiDragonDebug());
         }
     }
-    
-    @Override
-	   public void registerRenders() {
-		  ModItems.registerRenders();
-		  ModTools.registerRenders();
-		  ModArmour.registerRenders();
-		  ModBlocks.registerRenders();
-		
- }
 }

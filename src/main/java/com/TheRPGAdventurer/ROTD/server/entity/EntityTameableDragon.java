@@ -50,6 +50,7 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.EntityAISit;
 import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.entity.ai.attributes.RangedAttribute;
@@ -236,7 +237,7 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
      * Returns the distance to the ground while the entity is flying.
      */
     public double getAltitude() {
-        BlockPos groundPos = worldObj.getHeight(getPosition());
+        BlockPos groundPos = world.getHeight(getPosition());
         return posY - groundPos.getY();
     }
     
@@ -320,9 +321,9 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
                 
                 // update pathfinding method
                 if (flying) {
-                    navigator = new PathNavigateFlying(this, worldObj);
+                    navigator = new PathNavigateFlying(this, world);
                 } else {
-                    navigator = new PathNavigateGround(this, worldObj);
+                    navigator = new PathNavigateGround(this, world);
                 }
                 
                 // tasks need to be updated after switching modes
@@ -333,15 +334,15 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
         super.onLivingUpdate();
     }
     
-    @Override
-    public void moveEntityWithHeading(float strafe, float forward) {
-        // disable method while flying, the movement is done entirely by
-        // moveEntity() and this one just makes the dragon to fall slowly when
-        // hovering
-        if (!isFlying()) {
-            super.moveEntityWithHeading(strafe, forward);
-        }
-    }
+//    @Override
+//    public void moveEntityWithHeading(float strafe, float forward) {
+//        // disable method while flying, the movement is done entirely by
+//        // moveEntity() and this one just makes the dragon to fall slowly when
+//        // hovering
+//        if (!isFlying()) {
+//            super.moveEntityWithHeading(strafe, forward);
+//        }
+//    }
     
     /**
      * Handles entity death timer, experience orb and particle creation
@@ -401,7 +402,7 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
      * Returns the sound this mob makes when it is hurt.
      */
     @Override
-    protected SoundEvent getHurtSound() {
+    protected SoundEvent getHurtSound(DamageSource p_184601_1_) {
         return getSoundManager().getHurtSound();
     }
     
@@ -472,18 +473,18 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
      * Called when a player interacts with a mob. e.g. gets milk from a cow, gets into the saddle on a pig.
      */
     @Override
-    public boolean processInteract(EntityPlayer player, EnumHand hand, ItemStack item) {
+    public boolean processInteract(EntityPlayer player, EnumHand hand) {
         // don't interact with eggs!
         if (isEgg()) {
             return !this.canBeLeashedTo(player);
         }
         
         // inherited interaction
-        if (super.processInteract(player, hand, item)) {
+        if (super.processInteract(player, hand)) {
             return true;
         }
         
-        return getInteractHelper().interact(player, item);
+        return getInteractHelper().interact(player, activeItemStack);
     }
     
     public void tamedFor(EntityPlayer player, boolean successful) {       
@@ -493,10 +494,10 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
             setAttackTarget(null);
             setOwnerId(player.getUniqueID());
             playTameEffect(true);
-            worldObj.setEntityState(this, (byte) 7);
+            world.setEntityState(this, (byte) 7);
         } else {
             playTameEffect(false);
-            worldObj.setEntityState(this, (byte) 6);
+            world.setEntityState(this, (byte) 6);
         }
     }
     
@@ -597,11 +598,6 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
         // play eating sound
         playSound(getSoundManager().getAttackSound(), 1, 0.7f);
 
-        // play attack animation
-        if (worldObj instanceof WorldServer) {
-            ((WorldServer) worldObj).getEntityTracker().sendToAllTrackingEntity(
-                    this, new SPacketAnimation(this, 0));
-        }
     }
     
     /**
@@ -624,7 +620,7 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
      */
     @Override
     public boolean canRenderOnFire() {
-        return super.canRenderOnFire() && !getBreed().isImmuneToDamage(DamageSource.inFire);
+        return super.canRenderOnFire() && !getBreed().isImmuneToDamage(DamageSource.IN_FIRE);
     }
     
     /**
@@ -751,9 +747,9 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
           // dragon's rotation to fix that
           Vec3d pos = new Vec3d(0, 0, 0.8 * getScale());
           pos = pos.rotateYaw((float) Math.toRadians(-renderYawOffset)); // oops
-          px += pos.xCoord;
-          py += pos.yCoord;
-          pz += pos.zCoord;
+          px += pos.x;
+          py += pos.y;
+          pz += pos.z;
                   
           passenger.setPosition(px, py, pz);
           
@@ -768,7 +764,7 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
     }
     
     public boolean isInvulnerableTo(DamageSource src) {
-        Entity srcEnt = src.getEntity();
+        Entity srcEnt = src.getTrueSource();
         if (srcEnt != null) {
             // ignore own damage
             if (srcEnt == this) {
@@ -907,7 +903,7 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
      * @return true if the entity runs on a client or false if it runs on a server
      */
     public final boolean isClient() {
-        return worldObj.isRemote;
+        return world.isRemote;
     }
     
     /**
@@ -916,7 +912,7 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
      * @return true if the entity runs on a server or false if it runs on a client
      */
     public final boolean isServer() {
-        return !worldObj.isRemote;
+        return !world.isRemote;
     }
     
     protected ResourceLocation getLootTable() {

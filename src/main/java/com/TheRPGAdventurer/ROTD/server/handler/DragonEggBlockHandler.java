@@ -11,7 +11,8 @@
 package com.TheRPGAdventurer.ROTD.server.handler;
 
 import com.TheRPGAdventurer.ROTD.RealmOfTheDragons;
-import com.TheRPGAdventurer.ROTD.server.block.BlockDragonBreedEgg;
+import com.TheRPGAdventurer.ROTD.client.blocks.BlockDragonBreedEgg;
+import com.TheRPGAdventurer.ROTD.client.init.ModBlocks;
 import com.TheRPGAdventurer.ROTD.server.entity.EntityTameableDragon;
 import com.TheRPGAdventurer.ROTD.server.entity.breeds.EnumDragonBreed;
 import com.TheRPGAdventurer.ROTD.server.entity.helper.EnumDragonLifeStage;
@@ -75,7 +76,7 @@ public class DragonEggBlockHandler {
                 dragon.getBreedHelper().setBreedType(breed);
             }
             
-            world.spawnEntityInWorld(dragon);
+            world.spawnEntity(dragon);
         }
     }
 }

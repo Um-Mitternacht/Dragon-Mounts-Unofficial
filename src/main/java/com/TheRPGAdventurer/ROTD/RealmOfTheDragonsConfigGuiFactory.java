@@ -20,7 +20,6 @@ public class RealmOfTheDragonsConfigGuiFactory implements IModGuiFactory {
     public void initialize(Minecraft minecraftInstance) {
     }
 
-    @Override
     public Class<? extends GuiScreen> mainConfigGuiClass() {
         return RealmOfTheDragonsConfigGui.class;
     }
@@ -29,10 +28,16 @@ public class RealmOfTheDragonsConfigGuiFactory implements IModGuiFactory {
     public Set<RuntimeOptionCategoryElement> runtimeGuiCategories() {
         return null;
     }
+	@Override
+	public boolean hasConfigGui() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-    @Override
-    public RuntimeOptionGuiHandler getHandlerFor(RuntimeOptionCategoryElement element) {
-        return null;
-    }
+	@Override
+	public GuiScreen createConfigGui(GuiScreen parentScreen) {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
 }

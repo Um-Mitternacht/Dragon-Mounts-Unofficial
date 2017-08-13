@@ -9,6 +9,8 @@
  */
 package com.TheRPGAdventurer.ROTD.server.entity.ai.path;
 
+import com.TheRPGAdventurer.ROTD.util.math.MathX;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -16,7 +18,6 @@ import net.minecraft.pathfinding.PathPoint;
 import net.minecraft.pathfinding.SwimNodeProcessor;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 
 /**
  * Based on SwimNodeProcessor but for air blocks.
@@ -31,9 +32,9 @@ public class NodeProcessorFlying extends SwimNodeProcessor {
     @Override
     public PathPoint getPathPointToCoords(double x, double y, double target) {
         return openPoint(
-            MathHelper.floor_double(x - (entity.width / 2.0)),
-            MathHelper.floor_double(y + 0.5),
-            MathHelper.floor_double(target - (entity.width / 2.0))
+            MathX.floor_double(x - (entity.width / 2.0)),
+            MathX.floor_double(y + 0.5),
+            MathX.floor_double(target - (entity.width / 2.0))
         );
     }
 
@@ -43,9 +44,9 @@ public class NodeProcessorFlying extends SwimNodeProcessor {
         
         for (EnumFacing facing : EnumFacing.values()) {
             PathPoint point = getSafePoint(entity,
-                currentPoint.xCoord + facing.getFrontOffsetX(),
-                currentPoint.yCoord + facing.getFrontOffsetY(),
-                currentPoint.zCoord + facing.getFrontOffsetZ()
+                currentPoint.x + facing.getFrontOffsetX(),
+                currentPoint.y + facing.getFrontOffsetY(),
+                currentPoint.z + facing.getFrontOffsetZ()
             );
 
             if (point != null && !point.visited && point.distanceTo(targetPoint) < maxDistance) {
@@ -62,9 +63,9 @@ public class NodeProcessorFlying extends SwimNodeProcessor {
     private PathPoint getSafePoint(Entity entityIn, int x, int y, int z) {
         BlockPos pos = new BlockPos(x, y, z);
         
-        entitySizeX = MathHelper.floor_float(entityIn.width + 1);
-        entitySizeY = MathHelper.floor_float(entityIn.height + 1);
-        entitySizeZ = MathHelper.floor_float(entityIn.width + 1);
+        entitySizeX = MathX.floor_float(entityIn.width + 1);
+        entitySizeY = MathX.floor_float(entityIn.height + 1);
+        entitySizeZ = MathX.floor_float(entityIn.width + 1);
 
         for (int ix = 0; ix < entitySizeX; ++ix) {
             for (int iy = 0; iy < entitySizeY; ++iy) {

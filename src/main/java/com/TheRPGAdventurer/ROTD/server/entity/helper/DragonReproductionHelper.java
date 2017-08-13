@@ -83,7 +83,7 @@ public class DragonReproductionHelper extends DragonHelper  {
             // if we're lucky, it'll work. if not... well, it's not really being
             // used right now anyway...
             String breederName = nbt.getString(NBT_BREEDER_OLD);
-            EntityPlayer breeder = dragon.worldObj.getPlayerEntityByName(breederName);
+            EntityPlayer breeder = dragon.world.getPlayerEntityByName(breederName);
             setBreeder(breeder);
         }
         
@@ -119,7 +119,7 @@ public class DragonReproductionHelper extends DragonHelper  {
     public EntityPlayer getBreeder() {
         Optional<UUID> breederID = getBreederID();
         if (breederID.isPresent()) {
-            return dragon.worldObj.getPlayerEntityByUUID(breederID.get());
+            return dragon.world.getPlayerEntityByUUID(breederID.get());
         } else {
             return null;
         }
@@ -157,7 +157,7 @@ public class DragonReproductionHelper extends DragonHelper  {
         
         EntityTameableDragon parent1 = dragon;
         EntityTameableDragon parent2 = (EntityTameableDragon) mate;
-        EntityTameableDragon baby = new EntityTameableDragon(dragon.worldObj);
+        EntityTameableDragon baby = new EntityTameableDragon(dragon.world);
 
         // mix the custom names in case both parents have one
         if (parent1.hasCustomName() && parent2.hasCustomName()) {

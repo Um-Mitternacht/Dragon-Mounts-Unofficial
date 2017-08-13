@@ -10,23 +10,25 @@
 package com.TheRPGAdventurer.ROTD.server;
 
 import com.TheRPGAdventurer.ROTD.RealmOfTheDragons;
-import com.TheRPGAdventurer.ROTD.client.init.ModArmour;
-import com.TheRPGAdventurer.ROTD.client.init.ModItems;
-import com.TheRPGAdventurer.ROTD.client.init.ModTools;
-import com.TheRPGAdventurer.ROTD.server.block.BlockDragonBreedEgg;
+import com.TheRPGAdventurer.ROTD.client.blocks.BlockDragonBreedEgg;
+import com.TheRPGAdventurer.ROTD.client.items.ItemDragonBreedEgg;
 import com.TheRPGAdventurer.ROTD.server.cmd.CommandDragon;
 import com.TheRPGAdventurer.ROTD.server.entity.EntityTameableDragon;
 import com.TheRPGAdventurer.ROTD.server.handler.DragonEggBlockHandler;
-import com.TheRPGAdventurer.ROTD.server.item.ItemDragonBreedEgg;
 
+import net.minecraft.block.Block;
 import net.minecraft.command.ServerCommandManager;
+import net.minecraft.item.Item;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.event.FMLServerStoppedEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -38,21 +40,19 @@ public class CommonProxy {
     
     private final int ENTITY_TRACKING_RANGE = 80;
     private final int ENTITY_UPDATE_FREQ = 3;
-    private final int ENTITY_ID = 0;
+    private final int ENTITY_ID = 1;
     private final boolean ENTITY_SEND_VELO_UPDATES = true;
     
-    public void onPreInit(FMLPreInitializationEvent event) {
-        GameRegistry.register(BlockDragonBreedEgg.DRAGON_BREED_EGG.setRegistryName("dragon_egg"));
-        GameRegistry.register(ItemDragonBreedEgg.DRAGON_BREED_EGG.setRegistryName("dragon_egg"));
-    }
+    public void onPreInit(FMLPreInitializationEvent event) {}
+    
     
     public void onInit(FMLInitializationEvent evt) {
-        registerEntities();
-
         MinecraftForge.EVENT_BUS.register(new DragonEggBlockHandler());
     }
 
     public void onPostInit(FMLPostInitializationEvent event) {
+    	registerEntities();
+    	
     }
     
     public void onServerStarting(FMLServerStartingEvent evt) {
@@ -61,19 +61,11 @@ public class CommonProxy {
         cmdman.registerCommand(new CommandDragon());
     }
     
-    public void onServerStopped(FMLServerStoppedEvent evt) {
-    }
+    public void onServerStopped(FMLServerStoppedEvent evt) {}
     
     private void registerEntities() {
-        EntityRegistry.registerModEntity(EntityTameableDragon.class, "RealmOfTheDragon",
+        EntityRegistry.registerModEntity(new ResourceLocation(RealmOfTheDragons.MODID, "dragon"), EntityTameableDragon.class, "RealmOfTheDragon",
                 ENTITY_ID, RealmOfTheDragons.instance, ENTITY_TRACKING_RANGE, ENTITY_UPDATE_FREQ,
                 ENTITY_SEND_VELO_UPDATES);
-    }
-    
-    public void registerRenders() {
-  	  ModItems.registerRenders();
-	  ModTools.registerRenders();
-	  ModArmour.registerRenders();
-  }
-
+    }    
 }

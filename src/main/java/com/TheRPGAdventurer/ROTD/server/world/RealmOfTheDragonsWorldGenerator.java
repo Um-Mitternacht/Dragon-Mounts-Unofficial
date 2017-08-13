@@ -4,7 +4,6 @@ import java.util.Random;
 
 import com.TheRPGAdventurer.ROTD.util.Utils;
 
-import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -18,7 +17,6 @@ import net.minecraft.world.biome.BiomePlains;
 import net.minecraft.world.biome.BiomeRiver;
 import net.minecraft.world.biome.BiomeStoneBeach;
 import net.minecraft.world.biome.BiomeSwamp;
-import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
@@ -31,7 +29,7 @@ public class RealmOfTheDragonsWorldGenerator implements IWorldGenerator {
 	
 	//@formatter:on
 	@Override
-	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+	public void generate(Random random, int chunkX, int chunkZ, World world, net.minecraft.world.gen.IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		switch(world.provider.getDimension()) {
 		case -1: //Nether
 			this.generateNestAtNether(world, random, chunkX, chunkZ);

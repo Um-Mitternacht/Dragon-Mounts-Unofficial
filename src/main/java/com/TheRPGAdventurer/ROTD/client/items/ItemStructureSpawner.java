@@ -1,7 +1,7 @@
 package com.TheRPGAdventurer.ROTD.client.items;
 
+import com.TheRPGAdventurer.ROTD.client.blocks.BlockDragonBreedEgg;
 import com.TheRPGAdventurer.ROTD.client.init.ModBlocks;
-import com.TheRPGAdventurer.ROTD.server.block.BlockDragonBreedEgg;
 
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockDirt.DirtType;

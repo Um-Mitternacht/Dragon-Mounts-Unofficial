@@ -59,9 +59,9 @@ public class EntityAIDragonRide extends EntityAIDragonBase implements PrivateAcc
                 wp = wp.rotateYaw(MathX.PI_F * -0.5f);
             }
             
-            x += wp.xCoord * 10;
-            y += wp.yCoord * 10;
-            z += wp.zCoord * 10;
+            x += wp.x * 10;
+            y += wp.y * 10;
+            z += wp.z * 10;
         }
         
         // lift off with a jump

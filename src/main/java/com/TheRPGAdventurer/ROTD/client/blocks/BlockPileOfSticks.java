@@ -15,12 +15,10 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-public class BlockPileOfSticks extends Block {
+public class BlockPileOfSticks extends BlockBase {
 
-	public BlockPileOfSticks(String unlocalizedName, String registryName) {
-		super(Material.WOOD);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(RealmOfTheDragons.MODID, registryName));
+	public BlockPileOfSticks(String unlocalizedName, Material material) {
+		super(unlocalizedName, material);
 		this.setResistance(1);
 		this.setHardness(1);
 		this.setSoundType(SoundType.WOOD);

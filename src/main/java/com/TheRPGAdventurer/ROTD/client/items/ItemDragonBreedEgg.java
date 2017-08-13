@@ -1,20 +1,24 @@
 package com.TheRPGAdventurer.ROTD.client.items;
 
 
-import com.TheRPGAdventurer.ROTD.server.block.BlockDragonBreedEgg;
+import com.TheRPGAdventurer.ROTD.client.blocks.BlockDragonBreedEgg;
 import com.TheRPGAdventurer.ROTD.server.entity.breeds.EnumDragonBreed;
 
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.translation.I18n;
 
 public class ItemDragonBreedEgg extends ItemBlock {
     
-    public static final ItemDragonBreedEgg DRAGON_BREED_EGG = new ItemDragonBreedEgg();
+    public static ItemDragonBreedEgg DRAGON_BREED_EGG;
     
     public ItemDragonBreedEgg() {
         super(BlockDragonBreedEgg.DRAGON_BREED_EGG);
         setMaxDamage(0);
+        setRegistryName("dragon_egg");
         setHasSubtypes(true);
     }
 
@@ -29,4 +33,8 @@ public class ItemDragonBreedEgg extends ItemBlock {
         String breedName = I18n.translateToLocal("entity.RealmOfTheDragons.RealmOfTheDragon." + type.getName() + ".name");
         return I18n.translateToLocalFormatted("item.dragonEgg.name", breedName);
     }
+    
+   public static final Item[] ITEM_EGG =  {
+    	DRAGON_BREED_EGG = new ItemDragonBreedEgg()
+    };
 }

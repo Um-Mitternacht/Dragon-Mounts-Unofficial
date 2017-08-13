@@ -41,13 +41,13 @@ public class CommandDragon extends CommandBaseNested implements IDragonModifier 
     }
 
     @Override
-    public String getCommandName() {
+    public String getName() {
         return "dragon";
     }
     
     @Override
-    public String getCommandUsage(ICommandSender sender) {
-        return String.format("/%s [global]", super.getCommandUsage(sender));
+    public String getUsage(ICommandSender sender) {
+        return String.format("/%s [global]", super.getUsage(sender));
     }
     
     /**
@@ -57,4 +57,5 @@ public class CommandDragon extends CommandBaseNested implements IDragonModifier 
     public int getRequiredPermissionLevel() {
         return 3;
     }
+
 }

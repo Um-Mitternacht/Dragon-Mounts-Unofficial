@@ -14,8 +14,9 @@ import com.TheRPGAdventurer.ROTD.client.init.ModBlocks;
 import com.TheRPGAdventurer.ROTD.client.init.ModItems;
 import com.TheRPGAdventurer.ROTD.client.init.ModTools;
 import com.TheRPGAdventurer.ROTD.server.CommonProxy;
-import com.TheRPGAdventurer.ROTD.server.handler.RecipeHandler;
 import com.TheRPGAdventurer.ROTD.server.world.RealmOfTheDragonsWorldGenerator;
+
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -68,17 +69,8 @@ public class RealmOfTheDragons {
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent evt) {
-    	ModItems.init();
-	    ModBlocks.init();
-	    ModItems.register();
-	    ModBlocks.register();
-		ModTools.init();
-		ModTools.register();
-		ModArmour.init();
-		ModArmour.register();
 		RealmOfTheDragonsLootTables.registerLootTables();
 
-		proxy.registerRenders();
     }
     
     @EventHandler
@@ -91,7 +83,7 @@ public class RealmOfTheDragons {
     
     @EventHandler
     public void init(FMLInitializationEvent evt) {
-    	RecipeHandler.registerCraftingRecipes(null, null, null, null, null);
+//    	RecipeHandler.registerCraftingRecipes(null, null, null, null, null);
 		GameRegistry.registerWorldGenerator(new RealmOfTheDragonsWorldGenerator(), 0);
     }
 
@@ -102,7 +94,7 @@ public class RealmOfTheDragons {
     }
 
     @EventHandler
-    public void onPostInit(FMLPostInitializationEvent event) {
+    public void onPostInit(FMLPostInitializationEvent event, ResourceLocation dragon) {
         proxy.onPostInit(event);
     }
     

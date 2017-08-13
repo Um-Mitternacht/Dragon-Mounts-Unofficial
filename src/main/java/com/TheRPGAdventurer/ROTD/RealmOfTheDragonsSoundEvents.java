@@ -13,9 +13,11 @@ public class RealmOfTheDragonsSoundEvents {
 
     private static SoundEvent registerSound(String soundName) {
         ResourceLocation soundID = new ResourceLocation(RealmOfTheDragons.MODID, soundName);
-        return GameRegistry.register(new SoundEvent(soundID).setRegistryName(soundID));
+//        return GameRegistry.register(new SoundEvent(soundID).setRegistryName(soundID));
+		return null;
     }
 
     private RealmOfTheDragonsSoundEvents() {
+    
     }
 }

@@ -24,15 +24,15 @@ public class ItemDiamondShears extends ItemShears {
 	
 	@Override
     public boolean itemInteractionForEntity(ItemStack itemstack, EntityPlayer player, EntityLivingBase entity, net.minecraft.util.EnumHand hand) {
-		 if (entity.worldObj.isRemote)
+		 if (entity.world.isRemote)
 	        {return false;}
 	        if (entity instanceof EntityTameableDragon)
 	        {
 	            EntityTameableDragon target = (EntityTameableDragon)entity;
 	            BlockPos pos = new BlockPos(entity.posX, entity.posY, entity.posZ);
-	            if (target.isShearable(itemstack, entity.worldObj, pos))
+	            if (target.isShearable(itemstack, entity.world, pos))
 	            {
-	                java.util.List<ItemStack> drops = target.onSheared(itemstack, entity.worldObj, pos,
+	                java.util.List<ItemStack> drops = target.onSheared(itemstack, entity.world, pos,
 	                        net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(net.minecraft.init.Enchantments.FORTUNE, itemstack));
 
 	                java.util.Random rand = new java.util.Random();
@@ -50,15 +50,15 @@ public class ItemDiamondShears extends ItemShears {
 	      
 	  } else {
 		  
-		  if (entity.worldObj.isRemote)
+		  if (entity.world.isRemote)
 	        {return false;}
 	        if (entity instanceof IShearable)
 	        {
 	            IShearable target = (IShearable)entity;
 	            BlockPos pos = new BlockPos(entity.posX, entity.posY, entity.posZ);
-	            if (target.isShearable(itemstack, entity.worldObj, pos))
+	            if (target.isShearable(itemstack, entity.world, pos))
 	            {
-	                java.util.List<ItemStack> drops = target.onSheared(itemstack, entity.worldObj, pos,
+	                java.util.List<ItemStack> drops = target.onSheared(itemstack, entity.world, pos,
 	                        net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(net.minecraft.init.Enchantments.FORTUNE, itemstack));
 
 	                java.util.Random rand = new java.util.Random();

@@ -21,10 +21,11 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
+import com.TheRPGAdventurer.ROTD.client.blocks.BlockDragonBreedEgg;
+import com.TheRPGAdventurer.ROTD.client.init.ModBlocks;
 import com.TheRPGAdventurer.ROTD.client.model.DragonModel;
 import com.TheRPGAdventurer.ROTD.client.model.DragonModelMode;
 import com.TheRPGAdventurer.ROTD.client.render.breeds.DefaultDragonBreedRenderer;
-import com.TheRPGAdventurer.ROTD.server.block.BlockDragonBreedEgg;
 import com.TheRPGAdventurer.ROTD.server.entity.EntityTameableDragon;
 import com.TheRPGAdventurer.ROTD.server.entity.breeds.EnumDragonBreed;
 import com.TheRPGAdventurer.ROTD.server.entity.helper.DragonLifeStageHelper;
@@ -33,9 +34,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockRendererDispatcher;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -159,7 +160,7 @@ public class DragonRenderer extends RenderLiving<EntityTameableDragon> {
 
         // prepare egg rendering
         Tessellator tessellator = Tessellator.getInstance();
-        VertexBuffer vb = tessellator.getBuffer();
+        BufferBuilder vb = tessellator.getBuffer();
         vb.begin(GL_QUADS, DefaultVertexFormats.BLOCK);
 
         Block block = BlockDragonBreedEgg.DRAGON_BREED_EGG;
@@ -176,7 +177,7 @@ public class DragonRenderer extends RenderLiving<EntityTameableDragon> {
         IBakedModel bakedModel = brd.getModelForState(iblockstate);
         
         // render egg
-        brd.getBlockModelRenderer().renderModel(dragon.worldObj, bakedModel,
+        brd.getBlockModelRenderer().renderModel(dragon.world, bakedModel,
                 iblockstate, blockpos, vb, false);
         vb.setTranslation(0, 0, 0);
         
@@ -189,7 +190,7 @@ public class DragonRenderer extends RenderLiving<EntityTameableDragon> {
     }
 
     @Override
-    protected void rotateCorpse(EntityTameableDragon dragon, float par2, float par3, float par4) {
+    protected void applyRotations(EntityTameableDragon dragon, float par2, float par3, float par4) {
         GlStateManager.rotate(180 - par3, 0, 1, 0);
     }
 

@@ -70,7 +70,7 @@ public class EntityAIDragonWatchLiving extends EntityAIDragonBase {
      * Returns whether an in-progress EntityAIBase should continue executing
      */
     @Override
-    public boolean continueExecuting() {
+    public boolean shouldContinueExecuting() {
         if (!watchedEntity.isEntityAlive()) {
             return false;
         }

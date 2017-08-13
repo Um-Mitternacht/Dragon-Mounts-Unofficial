@@ -1,5 +1,7 @@
 package com.TheRPGAdventurer.ROTD.client.init;
 
+import com.TheRPGAdventurer.ROTD.client.blocks.BlockDragonBreedEgg;
+import com.TheRPGAdventurer.ROTD.client.items.ItemDragonBreedEgg;
 import com.TheRPGAdventurer.ROTD.client.items.ItemStructureSpawner;
 import com.TheRPGAdventurer.ROTD.client.items.dragonscales.ItemAmethystDragonScales;
 import com.TheRPGAdventurer.ROTD.client.items.dragonscales.ItemGarnetDragonScales;
@@ -26,36 +28,15 @@ public class ModItems extends Items {
 	public static Item DeadDragonScales;
 	public static Item structure_spawner;
 	
-	public static Block dragonEgg;
-	
-	public static void init() {
-		JadeDragonScales = new ItemJadeDragonScales("jade_dragonscales", "jade_dragonscales");
-		RubyDragonScales = new ItemRubyDragonScales("ruby_dragonscales", "ruby_dragonscales");
-		AmethystDragonScales = new ItemAmethystDragonScales("amethyst_dragonscales", "amethyst_dragonscales");
-		SapphireDragonScales = new ItemSapphireDragonScales("sapphire_dragonscales", "sapphire_dragonscales");
-		GarnetDragonScales = new ItemGarnetDragonScales("garnet_dragonscales", "garnet_dragonscales");
-		structure_spawner = new ItemStructureSpawner("structure_spawner", "structure_spawner");
-	}
-
-    public static void register() {
-    	registerItem(JadeDragonScales);
-    	registerItem(RubyDragonScales);
-    	registerItem(AmethystDragonScales);
-    	registerItem(GarnetDragonScales);
-    	registerItem(SapphireDragonScales);
-    	registerItem(structure_spawner);
-    	
-    }
-    
-    public static void registerRenders() {
-    	registerRender(JadeDragonScales);
-    	registerRender(RubyDragonScales);
-    	registerRender(AmethystDragonScales);
-    	registerRender(GarnetDragonScales);
-    	registerRender(SapphireDragonScales);
-    	registerRender(structure_spawner);
-
-    }
+	public static final Item[] ITEMS = {
+		JadeDragonScales = new ItemJadeDragonScales("jade_dragonscales", "jade_dragonscales"),
+		RubyDragonScales = new ItemRubyDragonScales("ruby_dragonscales", "ruby_dragonscales"),
+		AmethystDragonScales = new ItemAmethystDragonScales("amethyst_dragonscales", "amethyst_dragonscales"),
+		SapphireDragonScales = new ItemSapphireDragonScales("sapphire_dragonscales", "sapphire_dragonscales"),
+		GarnetDragonScales = new ItemGarnetDragonScales("garnet_dragonscales", "garnet_dragonscales"),
+		structure_spawner = new ItemStructureSpawner("structure_spawner", "structure_spawner")
+		
+	};
     
     public static void setCreativeTab() {
     	JadeDragonScales.setCreativeTab(CreativeTabs.MATERIALS);
@@ -63,16 +44,10 @@ public class ModItems extends Items {
     	GarnetDragonScales.setCreativeTab(CreativeTabs.MATERIALS);
     	RubyDragonScales.setCreativeTab(CreativeTabs.MATERIALS);
         SapphireDragonScales.setCreativeTab(CreativeTabs.MATERIALS);
-    }
-	
-    public static void registerItem(Item item) {
-    	GameRegistry.register(item);
-    	Utils.getLogger().info("Registered item: " + item.getUnlocalizedName().substring(5));
+        structure_spawner.setCreativeTab(CreativeTabs.MISC);
     }
     
-    public static void registerRender(Item item) {
-    	ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName().toString(), "inventory")); 
-    	Utils.getLogger().info("Register render for " + item.getUnlocalizedName().substring(5));
-    }
-
+    
+	
+   
 }

@@ -50,7 +50,7 @@ public class EntityAIDragonMate extends EntityAIDragonBase {
      * Returns whether an in-progress EntityAIBase should continue executing
      */
     @Override
-    public boolean continueExecuting() {
+    public boolean shouldContinueExecuting() {
         return dragonMate.isEntityAlive() && dragonMate.isInLove() && spawnBabyDelay < 60;
     }
 
@@ -114,7 +114,7 @@ public class EntityAIDragonMate extends EntityAIDragonBase {
             dragonBaby.setLocationAndAngles(dragon.posX, dragon.posY, dragon.posZ, 0, 0);
             dragonBaby.getLifeStageHelper().setLifeStage(EnumDragonLifeStage.EGG);
             
-            world.spawnEntityInWorld(dragonBaby);
+            world.spawnEntity(dragonBaby);
 
             // TODO: particles for the clients?
         }

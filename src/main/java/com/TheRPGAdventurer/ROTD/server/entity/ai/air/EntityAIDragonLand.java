@@ -11,9 +11,9 @@ package com.TheRPGAdventurer.ROTD.server.entity.ai.air;
 
 import com.TheRPGAdventurer.ROTD.server.entity.EntityTameableDragon;
 import com.TheRPGAdventurer.ROTD.server.entity.ai.EntityAIDragonBase;
+import com.TheRPGAdventurer.ROTD.util.math.MathX;
 
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 
 /**
  * Dragon AI for instant landing, if left unmounted in air.
@@ -36,7 +36,7 @@ public class EntityAIDragonLand extends EntityAIDragonBase {
         landingPos = dragon.getPosition();
         
         // add some variance
-        int followRange = MathHelper.floor_double(getFollowRange());
+        int followRange = MathX.floor_double(getFollowRange());
         int ox = followRange - random.nextInt(followRange) * 2;
         int oz = followRange - random.nextInt(followRange) * 2;
         landingPos = landingPos.add(ox, 0, oz);
@@ -54,7 +54,7 @@ public class EntityAIDragonLand extends EntityAIDragonBase {
     }
     
     @Override
-    public boolean continueExecuting() {
+    public boolean shouldContinueExecuting() {
         return dragon.isFlying() && dragon.getRidingPlayer() == null && !dragon.getNavigator().noPath();
     }
 
