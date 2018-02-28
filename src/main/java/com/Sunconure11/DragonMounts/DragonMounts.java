@@ -10,7 +10,6 @@
 package com.Sunconure11.DragonMounts;
 
 import com.Sunconure11.DragonMounts.server.CommonProxy;
-import com.Sunconure11.DragonMounts.server.world.RealmOfTheDragonsWorldGenerator;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -73,8 +72,6 @@ public class DragonMounts {
 
 	@EventHandler
 	public void init(FMLInitializationEvent evt) {
-//    	RecipeHandler.registerCraftingRecipes(null, null, null, null, null);
-		GameRegistry.registerWorldGenerator(new RealmOfTheDragonsWorldGenerator(), 0);
 	}
 
 	@EventHandler

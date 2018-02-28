@@ -53,7 +53,7 @@ public class CommonProxy {
 	}
 
 	private void registerEntities() {
-		EntityRegistry.registerModEntity(new ResourceLocation(DragonMounts.MODID, "dragon"), EntityTameableDragon.class, "RealmOfTheDragon",
+		EntityRegistry.registerModEntity(new ResourceLocation(DragonMounts.MODID, "dragon"), EntityTameableDragon.class, "DragonMounts",
 				ENTITY_ID, DragonMounts.instance, ENTITY_TRACKING_RANGE, ENTITY_UPDATE_FREQ,
 				ENTITY_SEND_VELO_UPDATES);
 	}

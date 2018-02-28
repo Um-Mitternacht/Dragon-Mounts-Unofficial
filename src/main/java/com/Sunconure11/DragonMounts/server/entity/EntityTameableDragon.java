@@ -10,14 +10,11 @@
 package com.Sunconure11.DragonMounts.server.entity;
 
 import com.Sunconure11.DragonMounts.DragonMountsLootTables;
-import com.Sunconure11.DragonMounts.client.init.ModItems;
-import com.Sunconure11.DragonMounts.client.init.ModTools;
 import com.Sunconure11.DragonMounts.client.model.anim.DragonAnimator;
 import com.Sunconure11.DragonMounts.server.entity.ai.path.PathNavigateFlying;
 import com.Sunconure11.DragonMounts.server.entity.breeds.DragonBreed;
 import com.Sunconure11.DragonMounts.server.entity.breeds.EnumDragonBreed;
 import com.Sunconure11.DragonMounts.server.entity.helper.*;
-import com.TheRPGAdventurer.ROTD.server.entity.helper.*;
 import com.google.common.base.Optional;
 import net.minecraft.block.Block;
 import net.minecraft.entity.*;
@@ -61,7 +58,7 @@ import static net.minecraft.entity.SharedMonsterAttributes.*;
  * @author Nico Bergemann <barracuda415 at yahoo.de>
  * @Modifier James Miller <TheRPGAdventurer.>
  */
-public class EntityTameableDragon extends EntityTameable implements IShearable {
+public class EntityTameableDragon extends EntityTameable {
 
 	public static final IAttribute MOVEMENT_SPEED_AIR = new RangedAttribute(null,
 			"generic.movementSpeedAir", 1.5, 0.0, Double.MAX_VALUE)
@@ -95,8 +92,6 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
 			EntityDataManager.<Integer>createKey(EntityTameableDragon.class, DataSerializers.VARINT);
 	private static final DataParameter<Integer> DATA_TICKS_SINCE_CREATION =
 			EntityDataManager.<Integer>createKey(EntityTameableDragon.class, DataSerializers.VARINT);
-	private static final DataParameter<Byte> DRAGON_SCALES =
-			EntityDataManager.<Byte>createKey(EntityTameableDragon.class, DataSerializers.BYTE);
 
 	// data NBT IDs
 	private static final String NBT_SADDLED = "Saddle";
@@ -151,7 +146,6 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
 
 		dataManager.register(DATA_FLYING, false);
 		dataManager.register(DATA_SADDLED, false);
-		dataManager.register(DRAGON_SCALES, Byte.valueOf((byte) 0));
 	}
 
 	@Override
@@ -247,7 +241,6 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
 	public void writeEntityToNBT(NBTTagCompound nbt) {
 		super.writeEntityToNBT(nbt);
 		nbt.setBoolean(NBT_SADDLED, isSaddled());
-		nbt.setBoolean("Sheared", this.getSheared());
 
 		helpers.values().forEach(helper -> helper.writeToNBT(nbt));
 	}
@@ -259,7 +252,6 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
 	public void readEntityFromNBT(NBTTagCompound nbt) {
 		super.readEntityFromNBT(nbt);
 		setSaddled(nbt.getBoolean(NBT_SADDLED));
-		this.setSheared(nbt.getBoolean("Sheared"));
 
 		helpers.values().forEach(helper -> helper.readFromNBT(nbt));
 	}
@@ -907,60 +899,4 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
 		}
 
 	}
-
-	protected Item getShearDropItem() {
-
-		switch (this.getBreedType()) {
-			case JADE:
-				return ModItems.JadeDragonScales;
-			case GARNET:
-				return ModItems.GarnetDragonScales;
-			case RUBY:
-				return ModItems.RubyDragonScales;
-			case SAPPHIRE:
-				return ModItems.SapphireDragonScales;
-			case AMETHYST:
-				return ModItems.AmethystDragonScales;
-			default: // no defaults!
-				return null;
-
-		}
-	}
-
-	public boolean getSheared() {
-		return (((Byte) this.dataManager.get(DRAGON_SCALES)).byteValue() & 16) != 0;
-	}
-
-	/**
-	 * make a sheep sheared if set to true
-	 */
-	public void setSheared(boolean sheared) {
-		byte b0 = ((Byte) this.dataManager.get(DRAGON_SCALES)).byteValue();
-
-		if (sheared) {
-			this.dataManager.set(DRAGON_SCALES, Byte.valueOf((byte) (b0 | 16)));
-		} else {
-			this.dataManager.set(DRAGON_SCALES, Byte.valueOf((byte) (b0 & -17)));
-		}
-	}
-
-	@Override
-	public boolean isShearable(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos) {
-		return item != null && item.getItem() == ModTools.diamond_shears && !this.isChild() && !this.getSheared();
-
-	}
-
-	@Override
-	public List<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
-		this.setSheared(true);
-		int i = 1 + this.rand.nextInt(3);
-
-		java.util.List<ItemStack> ret = new java.util.ArrayList<ItemStack>();
-		for (int j = 0; j < i; ++j)
-			ret.add(new ItemStack(this.getShearDropItem()));
-
-		this.playSound(SoundEvents.ENTITY_SHEEP_SHEAR, 1.0F, 1.0F);
-		return ret;
-	}
-
 }

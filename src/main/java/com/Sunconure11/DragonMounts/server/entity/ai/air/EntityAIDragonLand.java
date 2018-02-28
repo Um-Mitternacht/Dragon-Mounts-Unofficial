@@ -13,6 +13,7 @@ import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
 import com.Sunconure11.DragonMounts.server.entity.ai.EntityAIDragonBase;
 import com.Sunconure11.DragonMounts.util.math.MathX;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 
 /**
  * Dragon AI for instant landing, if left unmounted in air.
@@ -35,7 +36,7 @@ public class EntityAIDragonLand extends EntityAIDragonBase {
 		landingPos = dragon.getPosition();
 
 		// add some variance
-		int followRange = MathX.floor_double(getFollowRange());
+		int followRange = MathHelper.floor(getFollowRange());
 		int ox = followRange - random.nextInt(followRange) * 2;
 		int oz = followRange - random.nextInt(followRange) * 2;
 		landingPos = landingPos.add(ox, 0, oz);

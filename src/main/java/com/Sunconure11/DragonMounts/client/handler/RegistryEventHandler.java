@@ -2,10 +2,7 @@ package com.Sunconure11.DragonMounts.client.handler;
 
 import com.Sunconure11.DragonMounts.DragonMounts;
 import com.Sunconure11.DragonMounts.client.blocks.BlockDragonBreedEgg;
-import com.Sunconure11.DragonMounts.client.init.ModArmour;
 import com.Sunconure11.DragonMounts.client.init.ModBlocks;
-import com.Sunconure11.DragonMounts.client.init.ModItems;
-import com.Sunconure11.DragonMounts.client.init.ModTools;
 import com.Sunconure11.DragonMounts.client.items.ItemDragonBreedEgg;
 import com.Sunconure11.DragonMounts.server.entity.breeds.EnumDragonBreed;
 import com.Sunconure11.DragonMounts.util.Utils;
@@ -30,9 +27,6 @@ public class RegistryEventHandler {
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
-		event.getRegistry().registerAll(ModItems.ITEMS);
-		event.getRegistry().registerAll(ModTools.TOOLS);
-		event.getRegistry().registerAll(ModArmour.ARMOR);
 
 		for (Block block : ModBlocks.BLOCKS) {
 			event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
@@ -75,18 +69,6 @@ public class RegistryEventHandler {
 				ModelResourceLocation eggModelLoc = new ModelResourceLocation(DragonMounts.MODID + ":dragon_egg", "breed=" + breed.getName());
 				ModelLoader.setCustomModelResourceLocation(itemBlockDragonEgg, meta, eggModelLoc);
 			});
-		}
-
-		for (Item item : ModItems.ITEMS) {
-			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
-		}
-
-		for (Item item : ModTools.TOOLS) {
-			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
-		}
-
-		for (Item item : ModArmour.ARMOR) {
-			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName().toString(), "inventory"));
 		}
 
 		Utils.getLogger().info("Registered models");

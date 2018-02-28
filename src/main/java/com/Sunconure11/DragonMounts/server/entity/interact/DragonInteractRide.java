@@ -9,7 +9,6 @@
  */
 package com.Sunconure11.DragonMounts.server.entity.interact;
 
-import com.Sunconure11.DragonMounts.client.init.ModTools;
 import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
 import com.Sunconure11.DragonMounts.server.util.ItemUtils;
 import net.minecraft.entity.player.EntityPlayer;
@@ -27,7 +26,7 @@ public class DragonInteractRide extends DragonInteract {
 	@Override
 	public boolean interact(EntityPlayer player, ItemStack item) {
 		if (dragon.isServer() && dragon.isTamed() &&
-				dragon.isSaddled() && !ItemUtils.hasEquippedUsable(player) && !ItemUtils.hasEquipped(player, ModTools.diamond_shears)) {
+				dragon.isSaddled() && !ItemUtils.hasEquippedUsable(player)) {
 			dragon.setRidingPlayer(player);
 			return true;
 		}

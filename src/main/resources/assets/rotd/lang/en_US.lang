@@ -1,11 +1,11 @@
-entity.dragon_mounts.RealmOfTheDragon.amethyst.name=Amethyst Dragon
-entity.dragon_mounts.RealmOfTheDragon.end.name=Ender Dragon
-entity.dragon_mounts.RealmOfTheDragon.garnet.name=Garnet Dragon
-entity.dragon_mounts.RealmOfTheDragon.jade.name=Jade Dragon
-entity.dragon_mounts.RealmOfTheDragon.sapphire.name=Sapphire Dragon
-entity.dragon_mounts.RealmOfTheDragon.name=Ender Dragon
-entity.dragon_mounts.RealmOfTheDragon.nether.name=Nether Dragon
-entity.dragon_mounts.RealmOfTheDragon.ruby.name=Ruby Dragon
+entity.dragon_mounts.DragonMounts.amethyst.name=Amethyst Dragon
+entity.dragon_mounts.DragonMounts.end.name=Ender Dragon
+entity.dragon_mounts.DragonMounts.garnet.name=Garnet Dragon
+entity.dragon_mounts.DragonMounts.jade.name=Jade Dragon
+entity.dragon_mounts.DragonMounts.sapphire.name=Sapphire Dragon
+entity.dragon_mounts.DragonMounts.name=Ender Dragon
+entity.dragon_mounts.DragonMounts.nether.name=Nether Dragon
+entity.dragon_mounts.DragonMounts.ruby.name=Ruby Dragon
 
 commands.dragon.nodragons=There are no dragons nearby
 commands.dragon.canttame=You cannot tame dragons
@@ -67,17 +67,17 @@ item.sapphire_dragonscale_chestplate.name=Sapphire DragonScale Chestplate
 item.sapphire_dragonscale_leggings.name=Sapphire DragonScale Leggings
 item.sapphire_dragonscale_boots.name=Sapphire DragonScale Boots
 
-key.categories.RealmOfTheDragon = Dragon Controls
+key.categories.DragonMounts = Dragon Controls
 key.dragon.flyUp=Fly Up
 key.dragon.flyDown=Fly Down
 
-entity.RealmOfTheDragons.RealmOfTheDragon.amethyst.name=Amethyst Dragon
-entity.RealmOfTheDragons.RealmOfTheDragon.end.name=Ender Dragon
-entity.RealmOfTheDragons.RealmOfTheDragon.garnet.name=Garnet Dragon
-entity.RealmOfTheDragons.RealmOfTheDragon.jade.name=Jade Dragon
-entity.RealmOfTheDragons.RealmOfTheDragon.sapphire.name=Sapphire Dragon
-entity.RealmOfTheDragons.RealmOfTheDragon.name=Ender Dragon
-entity.RealmOfTheDragons.RealmOfTheDragon.nether.name=Nether Dragon
-entity.RealmOfTheDragons.RealmOfTheDragon.ruby.name=Ruby Dragon
+entity.DragonMountss.DragonMounts.amethyst.name=Amethyst Dragon
+entity.DragonMountss.DragonMounts.end.name=Ender Dragon
+entity.DragonMountss.DragonMounts.garnet.name=Garnet Dragon
+entity.DragonMountss.DragonMounts.jade.name=Jade Dragon
+entity.DragonMountss.DragonMounts.sapphire.name=Sapphire Dragon
+entity.DragonMountss.DragonMounts.name=Ender Dragon
+entity.DragonMountss.DragonMounts.nether.name=Nether Dragon
+entity.DragonMountss.DragonMounts.ruby.name=Ruby Dragon
 
 
