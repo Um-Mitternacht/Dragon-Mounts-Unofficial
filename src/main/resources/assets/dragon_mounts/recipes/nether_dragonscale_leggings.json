@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "dragon_mounts:nether_dragonscales"
+    }
+  },
+  "result": {
+    "item": "dragon_mounts:nether_dragonscale_leggings"
+  }
+}
+

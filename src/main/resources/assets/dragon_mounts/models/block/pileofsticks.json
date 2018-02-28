@@ -1,6 +1,6 @@
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "dragon_mounts:blocks/pileofsticks"
-  }
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "dragon_mounts:blocks/pileofsticks"
+	}
 }

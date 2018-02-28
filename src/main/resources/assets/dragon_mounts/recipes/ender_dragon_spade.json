@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "dragon_mounts:ender_dragonscales"
+    }
+  },
+  "result": {
+    "item": "dragon_mounts:ender_dragon_shovel"
+  }
+}
+

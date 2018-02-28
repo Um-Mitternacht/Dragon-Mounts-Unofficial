@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+	"textures": {
+	    "layer0": "dragon_mounts:items/nether_dragonscale_chestplate"
+	}
+}
+

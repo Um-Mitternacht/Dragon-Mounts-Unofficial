@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "dragon_mounts:amethyst_dragonscales"
+    }
+  },
+  "result": {
+    "item": "dragon_mounts:amethyst_dragonscale_chestplate"
+  }
+}
+
