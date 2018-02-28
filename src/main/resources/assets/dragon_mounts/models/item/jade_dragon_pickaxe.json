@@ -1,6 +1,6 @@
 {
-    "parent": "item/handheld",
-	"textures": {
-	    "layer0": "dragon_mounts:items/jade_dragon_pickaxe"
-	}
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "dragon_mounts:items/jade_dragon_pickaxe"
+  }
 }

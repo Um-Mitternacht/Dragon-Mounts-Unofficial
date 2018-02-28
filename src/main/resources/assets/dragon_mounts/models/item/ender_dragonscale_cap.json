@@ -1,7 +1,7 @@
 {
-    "parent": "item/generated",
-	"textures": {
-	    "layer0": "dragon_mounts:items/ender_dragonscale_cap"
-	}
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "dragon_mounts:items/ender_dragonscale_cap"
+  }
 }
 

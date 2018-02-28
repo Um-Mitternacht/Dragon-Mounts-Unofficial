@@ -1,8 +1,7 @@
 {
-    "variants": {
-	    "normal":{
-		    "model": "dragon_mounts:pileofsticks"
- 
-		} 
-	}  
+  "variants": {
+    "normal": {
+      "model": "dragon_mounts:pileofsticks"
+    }
+  }
 }
