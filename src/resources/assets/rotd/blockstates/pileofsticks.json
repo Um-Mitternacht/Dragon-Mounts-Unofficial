@@ -1,8 +1,7 @@
 {
-    "variants": {
-	    "normal":{
-		    "model": "rotd:pileofsticks"
- 
-		} 
-	}  
+  "variants": {
+    "normal": {
+      "model": "rotd:pileofsticks"
+    }
+  }
 }

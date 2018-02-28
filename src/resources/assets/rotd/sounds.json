@@ -5,7 +5,7 @@
       "rotd:mob/dragon/growl1",
       "rotd:mob/dragon/growl2",
       "rotd:mob/dragon/growl3",
-	  "rotd:mob/dragon/growl4"
+      "rotd:mob/dragon/growl4"
     ]
   },
   "mob.dragon.breathe": {
