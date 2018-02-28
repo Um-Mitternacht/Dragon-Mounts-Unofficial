@@ -9,11 +9,11 @@
  */
 package com.Sunconure11.DragonMounts.client;
 
+import com.Sunconure11.DragonMounts.DragonMounts;
 import com.Sunconure11.DragonMounts.client.gui.GuiDragonDebug;
 import com.Sunconure11.DragonMounts.client.render.DragonRenderer;
 import com.Sunconure11.DragonMounts.server.CommonProxy;
 import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
-import com.Sunconure11.DragonMounts.DragonMounts;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

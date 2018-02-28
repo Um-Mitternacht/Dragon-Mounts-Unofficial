@@ -9,14 +9,14 @@
  */
 package com.Sunconure11.DragonMounts.server.entity;
 
+import com.Sunconure11.DragonMounts.DragonMountsLootTables;
+import com.Sunconure11.DragonMounts.client.init.ModItems;
 import com.Sunconure11.DragonMounts.client.init.ModTools;
+import com.Sunconure11.DragonMounts.client.model.anim.DragonAnimator;
 import com.Sunconure11.DragonMounts.server.entity.ai.path.PathNavigateFlying;
 import com.Sunconure11.DragonMounts.server.entity.breeds.DragonBreed;
 import com.Sunconure11.DragonMounts.server.entity.breeds.EnumDragonBreed;
 import com.Sunconure11.DragonMounts.server.entity.helper.*;
-import com.Sunconure11.DragonMounts.DragonMountsLootTables;
-import com.Sunconure11.DragonMounts.client.init.ModItems;
-import com.Sunconure11.DragonMounts.client.model.anim.DragonAnimator;
 import com.TheRPGAdventurer.ROTD.server.entity.helper.*;
 import com.google.common.base.Optional;
 import net.minecraft.block.Block;
@@ -462,7 +462,7 @@ public class EntityTameableDragon extends EntityTameable implements IShearable {
 	public void tamedFor(EntityPlayer player, boolean successful) {
 		if (successful) {
 			setTamed(true);
-			navigator.clearPathEntity();  // replacement for setPathToEntity(null);
+			navigator.clearPath();  // replacement for setPathToEntity(null);
 			setAttackTarget(null);
 			setOwnerId(player.getUniqueID());
 			playTameEffect(true);

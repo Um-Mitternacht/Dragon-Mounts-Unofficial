@@ -1,10 +1,10 @@
 package com.Sunconure11.DragonMounts.server.handler;
 
+import com.Sunconure11.DragonMounts.client.init.ModArmour;
 import com.Sunconure11.DragonMounts.client.init.ModBlocks;
+import com.Sunconure11.DragonMounts.client.init.ModItems;
 import com.Sunconure11.DragonMounts.client.init.ModTools;
 import com.Sunconure11.DragonMounts.client.items.ItemModAxe;
-import com.Sunconure11.DragonMounts.client.init.ModArmour;
-import com.Sunconure11.DragonMounts.client.init.ModItems;
 import com.Sunconure11.DragonMounts.util.Utils;
 import net.minecraft.init.Items;
 import net.minecraft.item.*;

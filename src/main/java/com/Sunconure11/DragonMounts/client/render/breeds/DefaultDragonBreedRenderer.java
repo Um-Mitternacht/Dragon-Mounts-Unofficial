@@ -9,13 +9,13 @@
  */
 package com.Sunconure11.DragonMounts.client.render.breeds;
 
-import com.Sunconure11.DragonMounts.client.render.LayerRendererDragonSaddle;
-import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
-import com.Sunconure11.DragonMounts.server.entity.breeds.EnumDragonBreed;
 import com.Sunconure11.DragonMounts.DragonMounts;
 import com.Sunconure11.DragonMounts.client.model.DragonModel;
 import com.Sunconure11.DragonMounts.client.render.DragonRenderer;
 import com.Sunconure11.DragonMounts.client.render.LayerRendererDragonGlow;
+import com.Sunconure11.DragonMounts.client.render.LayerRendererDragonSaddle;
+import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
+import com.Sunconure11.DragonMounts.server.entity.breeds.EnumDragonBreed;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 

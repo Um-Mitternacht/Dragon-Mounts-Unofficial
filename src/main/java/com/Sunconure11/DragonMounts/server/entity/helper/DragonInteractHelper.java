@@ -9,9 +9,8 @@
  */
 package com.Sunconure11.DragonMounts.server.entity.helper;
 
-import com.Sunconure11.DragonMounts.server.entity.interact.*;
 import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
-import com.TheRPGAdventurer.ROTD.server.entity.interact.*;
+import com.Sunconure11.DragonMounts.server.entity.interact.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 

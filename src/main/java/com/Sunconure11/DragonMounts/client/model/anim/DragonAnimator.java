@@ -12,9 +12,9 @@ package com.Sunconure11.DragonMounts.client.model.anim;
 import com.Sunconure11.DragonMounts.client.model.DragonModel;
 import com.Sunconure11.DragonMounts.client.model.ModelPart;
 import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
+import com.Sunconure11.DragonMounts.server.entity.helper.DragonHelper;
 import com.Sunconure11.DragonMounts.util.math.Interpolation;
 import com.Sunconure11.DragonMounts.util.math.MathX;
-import com.Sunconure11.DragonMounts.server.entity.helper.DragonHelper;
 
 /**
  * Animation control class to put useless reptiles in motion.

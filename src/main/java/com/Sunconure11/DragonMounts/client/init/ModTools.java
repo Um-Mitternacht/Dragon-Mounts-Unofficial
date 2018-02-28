@@ -1,8 +1,7 @@
 package com.Sunconure11.DragonMounts.client.init;
 
-import com.Sunconure11.DragonMounts.client.items.*;
 import com.Sunconure11.DragonMounts.DragonMounts;
-import com.TheRPGAdventurer.ROTD.client.items.*;
+import com.Sunconure11.DragonMounts.client.items.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemPickaxe;

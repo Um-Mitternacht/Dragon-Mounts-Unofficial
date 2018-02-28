@@ -1,0 +1,38 @@
+{
+  "mob.dragon.growl": {
+    "sounds": [
+      "dragon_mounts:mob/dragon/growl",
+      "dragon_mounts:mob/dragon/growl1",
+      "dragon_mounts:mob/dragon/growl2",
+      "dragon_mounts:mob/dragon/growl3",
+      "dragon_mounts:mob/dragon/growl4"
+    ]
+  },
+  "mob.dragon.breathe": {
+    "sounds": [
+      {
+        "name": "minecraft:mob/cow/say2",
+        "volume": 0.5,
+        "pitch": 0.5
+      },
+      {
+        "name": "minecraft:mob/cow/say4",
+        "volume": 0.5,
+        "pitch": 0.5
+      }
+    ]
+  },
+  "mob.dragon.step": {
+    "sounds": [
+      "dragon_mounts:mob/dragon/step1",
+      "dragon_mounts:mob/dragon/step2",
+      "dragon_mounts:mob/dragon/step3",
+      "dragon_mounts:mob/dragon/step4"
+    ]
+  },
+  "mob.dragon.death": {
+    "sounds": [
+      "dragon_mounts:mob/dragon/death"
+    ]
+  }
+}

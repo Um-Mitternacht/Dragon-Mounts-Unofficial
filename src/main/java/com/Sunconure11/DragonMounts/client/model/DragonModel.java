@@ -10,10 +10,10 @@
 
 package com.Sunconure11.DragonMounts.client.model;
 
+import com.Sunconure11.DragonMounts.client.model.anim.DragonAnimator;
 import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
 import com.Sunconure11.DragonMounts.server.entity.breeds.EnumDragonBreed;
 import com.Sunconure11.DragonMounts.util.math.MathX;
-import com.Sunconure11.DragonMounts.client.model.anim.DragonAnimator;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;

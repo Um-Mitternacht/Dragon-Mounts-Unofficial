@@ -9,16 +9,16 @@
  */
 package com.Sunconure11.DragonMounts.server.entity.helper;
 
-import com.Sunconure11.DragonMounts.server.entity.ai.EntityAIDragonCatchOwner;
-import com.Sunconure11.DragonMounts.server.entity.ai.air.EntityAIDragonLand;
-import com.Sunconure11.DragonMounts.server.entity.ai.ground.EntityAIDragonWatchIdle;
-import com.Sunconure11.DragonMounts.server.util.EntityClassPredicate;
 import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
+import com.Sunconure11.DragonMounts.server.entity.ai.EntityAIDragonCatchOwner;
 import com.Sunconure11.DragonMounts.server.entity.ai.EntityAIDragonRide;
 import com.Sunconure11.DragonMounts.server.entity.ai.air.EntityAIDragonFollowOwner;
+import com.Sunconure11.DragonMounts.server.entity.ai.air.EntityAIDragonLand;
 import com.Sunconure11.DragonMounts.server.entity.ai.ground.EntityAIDragonHunt;
 import com.Sunconure11.DragonMounts.server.entity.ai.ground.EntityAIDragonMate;
+import com.Sunconure11.DragonMounts.server.entity.ai.ground.EntityAIDragonWatchIdle;
 import com.Sunconure11.DragonMounts.server.entity.ai.ground.EntityAIDragonWatchLiving;
+import com.Sunconure11.DragonMounts.server.util.EntityClassPredicate;
 import com.google.common.base.Predicate;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.ai.*;
@@ -82,7 +82,7 @@ public class DragonBrain extends DragonHelper {
 		}
 
 		// clear current navigation target
-		dragon.getNavigator().clearPathEntity();
+		dragon.getNavigator().clearPath();
 
 		// clear existing tasks
 		clearTasks();

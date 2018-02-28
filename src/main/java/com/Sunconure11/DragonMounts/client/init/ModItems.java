@@ -2,7 +2,6 @@ package com.Sunconure11.DragonMounts.client.init;
 
 import com.Sunconure11.DragonMounts.client.items.ItemStructureSpawner;
 import com.Sunconure11.DragonMounts.client.items.dragonscales.*;
-import com.TheRPGAdventurer.ROTD.client.items.dragonscales.*;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;

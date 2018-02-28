@@ -33,8 +33,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 )
 public class DragonMounts {
 
-	public static final String NAME = "Realm Of The Dragons";
-	public static final String MODID = "rotd";
+	public static final String NAME = "Dragon Mounts";
+	public static final String MODID = "dragon_mounts";
 	public static final String VERSION = "1.0.2 Alpha";
 
 	@SidedProxy(

@@ -9,10 +9,10 @@
  */
 package com.Sunconure11.DragonMounts.server.cmd;
 
-import com.Sunconure11.DragonMounts.server.entity.breeds.EnumDragonBreed;
-import com.Sunconure11.DragonMounts.server.entity.helper.EnumDragonLifeStage;
 import com.Sunconure11.DragonMounts.DragonMounts;
 import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
+import com.Sunconure11.DragonMounts.server.entity.breeds.EnumDragonBreed;
+import com.Sunconure11.DragonMounts.server.entity.helper.EnumDragonLifeStage;
 import net.minecraft.command.ICommandSender;
 
 import java.util.function.BiConsumer;

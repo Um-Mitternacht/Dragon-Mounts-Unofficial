@@ -9,13 +9,13 @@
  */
 package com.Sunconure11.DragonMounts.client.render;
 
+import com.Sunconure11.DragonMounts.client.blocks.BlockDragonBreedEgg;
 import com.Sunconure11.DragonMounts.client.model.DragonModel;
+import com.Sunconure11.DragonMounts.client.model.DragonModelMode;
 import com.Sunconure11.DragonMounts.client.render.breeds.DefaultDragonBreedRenderer;
 import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
 import com.Sunconure11.DragonMounts.server.entity.breeds.EnumDragonBreed;
 import com.Sunconure11.DragonMounts.server.entity.helper.DragonLifeStageHelper;
-import com.Sunconure11.DragonMounts.client.blocks.BlockDragonBreedEgg;
-import com.Sunconure11.DragonMounts.client.model.DragonModelMode;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;

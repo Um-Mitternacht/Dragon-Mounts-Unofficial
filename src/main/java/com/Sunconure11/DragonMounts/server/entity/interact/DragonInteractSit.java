@@ -9,8 +9,8 @@
  */
 package com.Sunconure11.DragonMounts.server.entity.interact;
 
-import com.Sunconure11.DragonMounts.server.util.ItemUtils;
 import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
+import com.Sunconure11.DragonMounts.server.util.ItemUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -30,7 +30,7 @@ public class DragonInteractSit extends DragonInteract {
 		if (dragon.isServer() && dragon.isTamed() &&
 				ItemUtils.hasEquipped(player, Items.STICK)) {
 			dragon.getAISit().setSitting(!dragon.isSitting());
-			dragon.getNavigator().clearPathEntity();
+			dragon.getNavigator().clearPath();
 			return true;
 		}
 

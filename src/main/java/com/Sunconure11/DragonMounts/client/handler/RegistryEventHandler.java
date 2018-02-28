@@ -1,5 +1,7 @@
 package com.Sunconure11.DragonMounts.client.handler;
 
+import com.Sunconure11.DragonMounts.DragonMounts;
+import com.Sunconure11.DragonMounts.client.blocks.BlockDragonBreedEgg;
 import com.Sunconure11.DragonMounts.client.init.ModArmour;
 import com.Sunconure11.DragonMounts.client.init.ModBlocks;
 import com.Sunconure11.DragonMounts.client.init.ModItems;
@@ -7,8 +9,6 @@ import com.Sunconure11.DragonMounts.client.init.ModTools;
 import com.Sunconure11.DragonMounts.client.items.ItemDragonBreedEgg;
 import com.Sunconure11.DragonMounts.server.entity.breeds.EnumDragonBreed;
 import com.Sunconure11.DragonMounts.util.Utils;
-import com.Sunconure11.DragonMounts.DragonMounts;
-import com.Sunconure11.DragonMounts.client.blocks.BlockDragonBreedEgg;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;

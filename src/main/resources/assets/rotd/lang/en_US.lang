@@ -1,0 +1,83 @@
+entity.dragon_mounts.RealmOfTheDragon.amethyst.name=Amethyst Dragon
+entity.dragon_mounts.RealmOfTheDragon.end.name=Ender Dragon
+entity.dragon_mounts.RealmOfTheDragon.garnet.name=Garnet Dragon
+entity.dragon_mounts.RealmOfTheDragon.jade.name=Jade Dragon
+entity.dragon_mounts.RealmOfTheDragon.sapphire.name=Sapphire Dragon
+entity.dragon_mounts.RealmOfTheDragon.name=Ender Dragon
+entity.dragon_mounts.RealmOfTheDragon.nether.name=Nether Dragon
+entity.dragon_mounts.RealmOfTheDragon.ruby.name=Ruby Dragon
+
+commands.dragon.nodragons=There are no dragons nearby
+commands.dragon.canttame=You cannot tame dragons
+
+item.diamond_shears.name=Diamond Shears
+item.structure_spawner.name=Structure Spawner (Debug)
+tile.pileofsticks.name=Nest Block
+
+item.dragonEgg.name=%s Egg
+
+item.jade_dragonscales.name=Jade Dragon Scales
+item.jade_dragon_pickaxe.name=Jade DragonScale Pickaxe
+item.jade_dragon_axe.name=Jade DragonScale Axe
+item.jade_dragon_shovel.name=Jade DragonScale Spade
+item.jade_dragon_hoe.name=Jade DragonScale Hoe
+item.jade_dragon_sword.name=Jade DragonScale Sword
+item.jade_dragonscale_cap.name=Jade DragonScale Cap
+item.jade_dragonscale_chestplate.name=Jade DragonScale Chestplate
+item.jade_dragonscale_leggings.name=Jade DragonScale Leggings
+item.jade_dragonscale_boots.name=Jade DragonScale Boots
+
+item.ruby_dragonscales.name=Ruby Dragon Scales
+item.ruby_dragon_pickaxe.name=Ruby DragonScale Pickaxe
+item.ruby_dragon_axe.name=Ruby DragonScale Axe
+item.ruby_dragon_shovel.name=Ruby DragonScale Spade
+item.ruby_dragon_sword.name=Ruby DragonScale Sword
+item.ruby_dragonscale_cap.name=Ruby DragonScale Cap
+item.ruby_dragonscale_chestplate.name=Ruby DragonScale Chestplate
+item.ruby_dragonscale_leggings.name=Ruby DragonScale Leggings
+item.ruby_dragonscale_boots.name=Ruby DragonScale Boots
+
+item.amethyst_dragonscales.name=Amethyst Dragon Scales
+item.amethyst_dragon_pickaxe.name=Amethyst DragonScale Pickaxe
+item.amethyst_dragon_axe.name=Amethyst DragonScale Axe
+item.amethyst_dragon_shovel.name=Amethyst DragonScale Spade
+item.amethyst_dragon_sword.name=Amethyst DragonScale Sword
+item.amethyst_dragonscale_cap.name=Amethyst DragonScale Cap
+item.amethyst_dragonscale_chestplate.name=Amethyst DragonScale Chestplate
+item.amethyst_dragonscale_leggings.name=Amethyst DragonScale Leggings
+item.amethyst_dragonscale_boots.name=Amethyst DragonScale Boots
+
+item.garnet_dragonscales.name=Garnet Dragon Scales
+item.garnet_dragon_pickaxe.name=Garnet DragonScale Pickaxe
+item.garnet_dragon_axe.name=Garnet DragonScale Axe
+item.garnet_dragon_shovel.name=Garnet DragonScale Spade
+item.garnet_dragon_sword.name=Garnet DragonScale Sword
+item.garnet_dragonscale_cap.name=Garnet DragonScale Cap
+item.garnet_dragonscale_chestplate.name=Garnet DragonScale Chestplate
+item.garnet_dragonscale_leggings.name=Garnet DragonScale Leggings
+item.garnet_dragonscale_boots.name=Garnet DragonScale Boots
+
+item.sapphire_dragonscales.name=Sapphire Dragon Scales
+item.sapphire_dragon_pickaxe.name=Sapphire DragonScale Pickaxe
+item.sapphire_dragon_axe.name=Sapphire DragonScale Axe
+item.sapphire_dragon_shovel.name=Sapphire DragonScale Spade
+item.sapphire_dragon_sword.name=Sapphire DragonScale Sword
+item.sapphire_dragonscale_cap.name=Sapphire DragonScale Cap
+item.sapphire_dragonscale_chestplate.name=Sapphire DragonScale Chestplate
+item.sapphire_dragonscale_leggings.name=Sapphire DragonScale Leggings
+item.sapphire_dragonscale_boots.name=Sapphire DragonScale Boots
+
+key.categories.RealmOfTheDragon = Dragon Controls
+key.dragon.flyUp=Fly Up
+key.dragon.flyDown=Fly Down
+
+entity.RealmOfTheDragons.RealmOfTheDragon.amethyst.name=Amethyst Dragon
+entity.RealmOfTheDragons.RealmOfTheDragon.end.name=Ender Dragon
+entity.RealmOfTheDragons.RealmOfTheDragon.garnet.name=Garnet Dragon
+entity.RealmOfTheDragons.RealmOfTheDragon.jade.name=Jade Dragon
+entity.RealmOfTheDragons.RealmOfTheDragon.sapphire.name=Sapphire Dragon
+entity.RealmOfTheDragons.RealmOfTheDragon.name=Ender Dragon
+entity.RealmOfTheDragons.RealmOfTheDragon.nether.name=Nether Dragon
+entity.RealmOfTheDragons.RealmOfTheDragon.ruby.name=Ruby Dragon
+
+

@@ -9,8 +9,8 @@
  */
 package com.Sunconure11.DragonMounts.client.handler;
 
-import com.Sunconure11.DragonMounts.util.reflection.PrivateAccessor;
 import com.Sunconure11.DragonMounts.DragonMounts;
+import com.Sunconure11.DragonMounts.util.reflection.PrivateAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
