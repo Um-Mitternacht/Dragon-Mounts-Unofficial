@@ -11,7 +11,6 @@ package com.Sunconure11.DragonMounts.server.entity.ai.air;
 
 import com.Sunconure11.DragonMounts.server.entity.EntityTameableDragon;
 import com.Sunconure11.DragonMounts.server.entity.ai.EntityAIDragonBase;
-import com.Sunconure11.DragonMounts.util.math.MathX;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 

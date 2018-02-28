@@ -9,7 +9,6 @@
  */
 package com.Sunconure11.DragonMounts.server.entity.ai.path;
 
-import com.Sunconure11.DragonMounts.util.math.MathX;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
